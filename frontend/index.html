@@ -1,256 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Home - R.A.I.N. Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.A.I.N. - Environment Friendly Energy Solution</title>
     <base href="/" />
-    <link rel="canonical" href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Environment friendly energy solution" />
-    <meta name="keywords" content="R.A.I.N., renewable energy, rainwater harvesting" />
-    
-    <!-- Facebook Open Graph -->
-    <meta property="og:title" content="R.A.I.N. Project - Home" />
-    <meta property="og:description" content="Environment friendly energy solution" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
+    <meta name="description" content="R.A.I.N. Project - Innovative rainwater harvesting and kinetic energy solution" />
+    <meta name="keywords" content="R.A.I.N., renewable energy, rainwater harvesting, kinetic energy" />
     
     <!-- CSS Files -->
     <link href="css/common-bundle.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="css/a188dd98b81a00c9e8c8f6ad0daafe83-bundle.css" rel="stylesheet" type="text/css" id="wb-page-stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
+    <link href="css/a188dd98b81a00c9e8c8f6ad0daafe83-bundle.css" rel="stylesheet" type="text/css" />
     
     <!-- JavaScript Files -->
     <script src="js/common-bundle.js" type="text/javascript"></script>
     <script src="js/a188dd98b81a00c9e8c8f6ad0daafe83-bundle.js" type="text/javascript"></script>
+    
+    <style>
+        /* Additional custom styles */
+        .places-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .place-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .place-card-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .place-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .place-card-header .location {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        .place-card-body {
+            padding: 20px;
+        }
+        .place-type {
+            display: inline-block;
+            background: #e8f4f8;
+            color: #2a5298;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .place-description {
+            color: #555;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        .place-established {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px 0;
+            font-size: 2rem;
+            color: #1e3c72;
+        }
+        .hero-title {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            margin-bottom: 50px;
+        }
+        .hero-title h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            flex: 1;
+            min-width: 280px;
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .feature-card:hover {
+            background: #e8f4f8;
+            transform: scale(1.02);
+        }
+        .feature-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
-<body class="site site-lang-en">
-    <div id="wb_root" class="root wb-layout-vertical">
-        <div class="wb_sbg"></div>
-        
-        <!-- ========== HEADER SECTION ========== -->
-        <div id="wb_header" class="wb_element wb-sticky wb-layout-element">
-            <div class="wb_content wb-layout-vertical">
-                
-                <!-- Logo and Navigation Row -->
-                <div id="header_nav" class="wb_element wb-layout-element">
-                    <div class="wb_content wb-layout-horizontal">
-                        
-                        <!-- Logo Area -->
-                        <div id="logo_area" class="wb_element wb-layout-element">
-                            <div class="wb_content wb-layout-horizontal">
-                                <div class="wb_element wb_element_picture">
-                                    <div class="wb_picture_wrap">
-                                        <img loading="lazy" alt="R.A.I.N. Icon" src="gallery_gen/565150f9b0805928eb3c6f259e20650e_78x56_0x0_78x72_crop.png">
-                                    </div>
-                                </div>
-                                <div class="wb_element wb_element_picture">
-                                    <div class="wb_picture_wrap">
-                                        <img loading="lazy" alt="R.A.I.N. Logo" src="gallery_gen/cd0df0cce139d68392d3b89ae1695123_492x150_fit.png">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Navigation Menu -->
-                        <div id="nav_menu" class="wb_element wb-layout-element">
-                            <div class="wb_content wb-layout-vertical">
-                                <div class="wb_element wb-menu wb-prevent-layout-click wb-menu-mobile" data-plugin="Menu">
-                                    <span class="btn btn-default btn-collapser">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </span>
-                                    <ul class="hmenu" dir="ltr">
-                                        <li class="active"><a href="/">Home</a></li>
-                                        <li><a href="/about">About</a></li>
-                                        <li><a href="/contacts">Contacts</a></li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-            </div>
+<body>
+    <!-- Header -->
+    <div class="header" style="background: #1e3c72; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img loading="lazy" alt="R.A.I.N. Icon" src="gallery_gen/565150f9b0805928eb3c6f259e20650e_78x56_0x0_78x72_crop.png" style="height: 50px;">
+            <img loading="lazy" alt="R.A.I.N. Logo" src="gallery_gen/cd0df0cce139d68392d3b89ae1695123_492x150_fit.png" style="height: 50px;">
         </div>
-        
-        <!-- ========== MAIN CONTENT ========== -->
-        <div id="wb_main" class="wb_element wb-layout-element">
-            <div class="wb_content wb-layout-vertical">
-                
-                <!-- Hero Section -->
-                <div id="hero_section" class="wb_element wb-layout-element">
-                    <div class="wb_content wb-layout-horizontal">
-                        <div class="wb_element wb-layout-element">
-                            <div class="wb_content wb-layout-vertical">
-                                <div class="wb_element wb_text_element">
-                                    <h1 class="wb-stl-heading1" style="text-align: center;">
-                                        <span style="color:rgba(255,255,255,1);">Environment friendly energy solution</span>
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Three Feature Cards -->
-                <div id="features_section" class="wb_element wb-layout-element">
-                    <div class="wb_content wb-layout-horizontal">
-                        
-                        <!-- Card 1: What is R.A.I.N. -->
-                        <div id="card1" class="wb_element wb-anim-entry wb-anim wb-anim-fade-in-bottom wb-layout-element">
-                            <div class="wb_content wb-layout-vertical">
-                                <div class="wb_element wb_element_shape">
-                                    <a href="/contacts" class="wb_shp"></a>
-                                </div>
-                                <div class="wb_element wb-layout-element">
-                                    <div class="wb_content wb-layout-vertical">
-                                        <div class="wb_element wb_text_element">
-                                            <h3 class="wb-stl-heading3">
-                                                <span style="color:rgba(0,0,0,1);">What is project R.A.I.N.</span>
-                                            </h3>
-                                        </div>
-                                        <div class="wb_element wb_text_element">
-                                            <p class="wb-stl-normal">Project R.A.I.N. is an innovative and green solution which also uses a power source that is not widely used - the power of the rain.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 2: About Us -->
-                        <div id="card2" class="wb_element wb-anim-entry wb-anim wb-anim-fade-in-top wb-layout-element">
-                            <div class="wb_content wb-layout-vertical">
-                                <div class="wb_element wb_element_shape">
-                                    <a href="/about" class="wb_shp"></a>
-                                </div>
-                                <div class="wb_element wb-layout-element">
-                                    <div class="wb_content wb-layout-vertical">
-                                        <div class="wb_element wb_text_element">
-                                            <h3 class="wb-stl-heading3">
-                                                <span style="color:rgba(0,0,0,1);">About us</span>
-                                            </h3>
-                                        </div>
-                                        <div class="wb_element wb_text_element">
-                                            <p class="wb-stl-normal">It also ties to target the problem of the ever-depleting resources of potable water. While we know we cannot solve the problem, we believe that every drop counts.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 3: Special Resources -->
-                        <div id="card3" class="wb_element wb-anim-entry wb-anim wb-anim-fade-in-bottom wb-layout-element">
-                            <div class="wb_content wb-layout-vertical">
-                                <div class="wb_element wb_element_shape">
-                                    <a href="/about" class="wb_shp"></a>
-                                </div>
-                                <div class="wb_element wb-layout-element">
-                                    <div class="wb_content wb-layout-vertical">
-                                        <div class="wb_element wb_text_element">
-                                            <h3 class="wb-stl-heading3">
-                                                <span style="color:rgba(0,0,0,1);">Special resources</span>
-                                            </h3>
-                                        </div>
-                                        <div class="wb_element wb_text_element">
-                                            <p class="wb-stl-normal">The project is self-sustained and uses innovative methods of creating, storing and using energy.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-				<!-- ========== PLACES SECTION (from hardcoded database) ========== -->
-				<div id="places_section" class="wb_element wb-layout-element">
-    				<div class="wb_content wb-layout-vertical">
-        				<div class="wb_element wb_text_element">
-            				<h2 class="wb-stl-heading2" style="text-align: center; margin-bottom: 30px;">
-                				<span style="color:rgba(0,0,0,1);">Our R.A.I.N. Locations</span>
-            				</h2>
-        				</div>
-        				<div id="places-container" class="wb_element wb-layout-element">
-            				<div class="wb_content wb-layout-horizontal" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                				<!-- Places will load here -->
-                				<div style="text-align: center; padding: 40px;">Loading places...</div>
-            				</div>
-        				</div>
-    				</div>
-				</div>
-                
-            </div>
-        </div>
-        
-        <!-- ========== FOOTER ========== -->
-        <div id="wb_footer" class="wb_element wb-layout-element">
-            <div class="wb_content wb-layout-vertical">
-                <div class="wb_element wb-layout-element">
-                    <div class="wb_content wb-layout-horizontal">
-                        <div class="wb_element wb-prevent-layout-click">
-                            <div class="wb-stl-footer">
-                                Powered by <a href="https://site.pro/" target="_blank" title="Site.pro Website builder">Site.pro</a> | Dockerized Version
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        <nav>
+            <ul style="display: flex; list-style: none; gap: 30px; margin: 0; padding: 0;">
+                <li><a href="/" style="color: white; text-decoration: none; font-weight: 600;">Home</a></li>
+                <li><a href="/about" style="color: white; text-decoration: none;">About</a></li>
+                <li><a href="/contacts" style="color: white; text-decoration: none;">Contacts</a></li>
+            </ul>
+        </nav>
     </div>
-    
-    <!-- API Integration Scripts -->
-    <script>
-		// Load places from hardcoded database
-		async function loadPlaces() {
-    		try {
-        		const response = await fetch('/api/places');
-        		const places = await response.json();
-        
-        		const container = document.getElementById('places-container');
-        		const placesContent = container.querySelector('.wb_content');
-        
-        		if (places.length > 0) {
-            		placesContent.innerHTML = places.map(place => `
-                		<div style="flex: 1; min-width: 250px; background: #f5f5f5; padding: 20px; border-radius: 10px; margin: 10px;">
-                    		<h3 style="color: #2c3e50; margin-bottom: 10px;">${place.name}</h3>
-                    		<p style="color: #7f8c8d; margin: 5px 0;">
-                        		<strong>${place.city}, ${place.country}</strong>
-                    		</p>
-                    		<p style="color: #555; margin: 10px 0;">
-                        		<strong>Type:</strong> ${place.type}
-                    		</p>
-                    		<p style="color: #666; font-size: 14px;">
-                        		${place.description}
-                    		</p>
-                    		<p style="color: #999; font-size: 12px; margin-top: 10px;">
-                        		Established: ${place.established}
-                    		</p>
-                		</div>
-            		`).join('');
-        		} else {
-            		placesContent.innerHTML = '<div style="text-align: center; padding: 40px;">No places found.</div>';
-        		}
-    		} catch (error) {
-        		console.error('Error loading places:', error);
-        		const container = document.getElementById('places-container');
-        		const placesContent = container.querySelector('.wb_content');
-        		placesContent.innerHTML = '<div style="text-align: center; padding: 40px; color: red;">Unable to load places data.</div>';
-    		}
-		}
 
-		// Load places when page loads
-		document.addEventListener('DOMContentLoaded', function() {
-			loadPlaces();
-		});
-	</script>
-    
+    <!-- Hero Section -->
+    <div class="hero-title">
+        <h1>Environment friendly energy solution</h1>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-container">
+        <div class="feature-card" onclick="location.href='/contacts'">
+            <h3>💧 What is project R.A.I.N.</h3>
+            <p>Project R.A.I.N. is an innovative and green solution which uses a power source that is not widely used - the power of the rain.</p>
+        </div>
+        <div class="feature-card" onclick="location.href='/about'">
+            <h3>🌍 About us</h3>
+            <p>It also ties to target the problem of the ever-depleting resources of potable water. While we know we cannot solve the problem, we believe that every drop counts.</p>
+        </div>
+        <div class="feature-card" onclick="location.href='/about'">
+            <h3>⚡ Special resources</h3>
+            <p>The project is self-sustained and uses innovative methods of creating, storing and using energy.</p>
+        </div>
+    </div>
+
+    <!-- Places Section (Hardcoded Database) -->
+    <h2 class="section-title">📍 Our R.A.I.N. Locations</h2>
+    <div id="places-container" class="places-grid">
+        <div style="text-align: center; width: 100%;">Loading locations...</div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: #1e3c72; color: white; text-align: center; padding: 25px; margin-top: 50px;">
+        <p>Powered by Site.pro | Dockerized Version | R.A.I.N. Project © 2024</p>
+    </div>
+
+    <script>
+        // Load places from hardcoded database
+        async function loadPlaces() {
+            try {
+                const response = await fetch('/api/places');
+                const places = await response.json();
+                
+                const container = document.getElementById('places-container');
+                
+                if (places.length > 0) {
+                    container.innerHTML = places.map(place => `
+                        <div class="place-card">
+                            <div class="place-card-header">
+                                <h3>${place.name}</h3>
+                                <div class="location">📍 ${place.city}, ${place.country}</div>
+                            </div>
+                            <div class="place-card-body">
+                                <span class="place-type">${place.type}</span>
+                                <p class="place-description">${place.description}</p>
+                                <div class="place-established">📅 Established: ${place.established}</div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<div style="text-align: center; width: 100%;">No locations found.</div>';
+                }
+            } catch (error) {
+                console.error('Error loading places:', error);
+                document.getElementById('places-container').innerHTML = '<div style="text-align: center; width: 100%; color: red;">Unable to load locations. Please make sure the server is running.</div>';
+            }
+        }
+        
+        // Load places when page loads
+        document.addEventListener('DOMContentLoaded', loadPlaces);
+    </script>
 </body>
 </html>
