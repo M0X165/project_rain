@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_db
+    environment:
+      - DB_HOST=postgres_db
+      - DB_USER=admin
+      - DB_PASSWORD=secret
+      - DB_NAME=contactdb
+    networks:
+      - rain-network
+    restart: unless-stopped
+
+  postgres_db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: contactdb
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - rain-network
+    restart: unless-stopped
+    ports:
+      - "5432:5432"  # Optional: for external DB access
+
+volumes:
+  pg_data:
+
+networks:
+  rain-network:
+    driver: bridge
+    
