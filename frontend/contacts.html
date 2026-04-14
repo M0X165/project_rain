@@ -1,249 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript"></script>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Contacts</title>
-	<base href="/" />
-	<link rel="canonical" href="/Contacts/" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Contacts" />
-	<meta name="keywords" content="Contacts" />
-	
-	<!-- CSS Files -->
-	<link href="css/common-bundle.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&amp;subset=cyrillic,cyrillic-ext,greek,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="css/a188dd98b81a02d21e3ea7b0f8765787-bundle.css" rel="stylesheet" type="text/css" id="wb-page-stylesheet" />
-	
-	<script src="js/common-bundle.js" type="text/javascript"></script>
-	<script src="js/a188dd98b81a02d21e3ea7b0f8765787-bundle.js" type="text/javascript"></script>
-	
-	<style>
-		/* Additional styles for the contact form */
-		.contact-form-container {
-			max-width: 600px;
-			margin: 40px auto;
-			padding: 30px;
-			background: #f9f9f9;
-			border-radius: 10px;
-			box-shadow: 0 0 20px rgba(0,0,0,0.1);
-		}
-		.form-group {
-			margin-bottom: 20px;
-		}
-		.form-group label {
-			display: block;
-			margin-bottom: 5px;
-			font-weight: bold;
-			color: #333;
-		}
-		.form-group input, .form-group textarea {
-			width: 100%;
-			padding: 10px;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-			font-size: 16px;
-		}
-		.form-group textarea {
-			height: 120px;
-		}
-		.submit-btn {
-			background: #4CAF50;
-			color: white;
-			padding: 12px 30px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 16px;
-		}
-		.submit-btn:hover {
-			background: #45a049;
-		}
-		#form-response {
-			margin-top: 20px;
-			padding: 10px;
-			border-radius: 5px;
-			text-align: center;
-		}
-		.success {
-			background: #d4edda;
-			color: #155724;
-			border: 1px solid #c3e6cb;
-		}
-		.error {
-			background: #f8d7da;
-			color: #721c24;
-			border: 1px solid #f5c6cb;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.A.I.N. | Contact Us</title>
+    <base href="/" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a2e;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #3498db;
+        }
+        
+        .hero-small {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .hero-small h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .info-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        
+        .info-item p {
+            margin: 0;
+        }
+        
+        .info-item .label {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .alert-success {
+            background: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #bbdef5;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-small h1 { font-size: 1.8rem; }
+            .container { padding: 2rem 1rem; }
+            .nav-container { flex-direction: column; }
+            .nav-links { gap: 1.5rem; }
+        }
+    </style>
 </head>
 
-<body class="site site-lang-en">
-<div id="wb_root" class="root wb-layout-vertical">
-	<div class="wb_sbg"></div>
-	
-	<!-- Header -->
-	<div id="wb_header_a188dd98b81a02d21e3ea7b0f8765787" class="wb_element wb-sticky wb-layout-element" data-plugin="LayoutElement" data-h-align="center" data-v-align="top">
-		<div class="wb_content wb-layout-vertical">
-			<div id="a19d435fcfd7003770fd1b78d0846095" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal"></div>
-			</div>
-			<div id="a188dd98a2a73512bd09dd8ff1364d2d" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal">
-					<div id="a188dd98a2a736e01a07523e6d3bb5ed" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-horizontal">
-							<div id="a19d435f25e700c066961741329fcb77" class="wb_element wb_element_picture" data-plugin="Picture" title="">
-								<div class="wb_picture_wrap">
-									<div class="wb-picture-wrapper">
-										<img loading="lazy" alt="" src="gallery_gen/565150f9b0805928eb3c6f259e20650e_78x56_0x0_78x72_crop.png">
-									</div>
-								</div>
-							</div>
-							<div id="a19d4360dd4c0064c0969805ad879bc2" class="wb_element wb_element_picture" data-plugin="Picture" title="">
-								<div class="wb_picture_wrap">
-									<div class="wb-picture-wrapper">
-										<img loading="lazy" alt="" src="gallery_gen/cd0df0cce139d68392d3b89ae1695123_492x150_fit.png">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="a18b61c2b15b0018388b437dece967d2" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-vertical">
-							<div id="a19d43b78224002b944d6ed137ec8506" class="wb_element wb-menu wb-prevent-layout-click wb-menu-mobile" data-plugin="Menu">
-								<span class="btn btn-default btn-collapser">
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</span>
-								<ul class="hmenu" dir="ltr">
-									<li><a href="/">Home</a></li>
-									<li><a href="/about">About</a></li>
-									<li class="wb_this_page_menu_item active"><a href="/contacts">Contacts</a></li>
-								</ul>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Main Content -->
-	<div id="wb_main_a188dd98b81a02d21e3ea7b0f8765787" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-		<div class="wb-layout-bg-element">
-			<div id="a188dd98a2a7039b6b0944231590c6dd" class="wb_element wb_element_shape" data-plugin="Shape">
-				<div class="wb_shp"></div>
-			</div>
-		</div>
-		<div class="wb_content wb-layout-vertical">
-			<div id="a188dd98a2a704d6c9dcb6f98868d371" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-vertical">
-					<div id="a188dd98a2a70529636a20280be1c1f1" class="wb_element wb_text_element" data-plugin="TextArea">
-						<h1 class="wb-stl-heading1">Contacts</h1>
-					</div>
-					<div id="a188dd98a2a706b63975807e0c0bc07d" class="wb_element wb_text_element" data-plugin="TextArea">
-						<p class="wb-stl-normal" style="text-align: center;">Get in touch with us! Fill out the form below and we'll respond within 24 hours.</p>
-					</div>
-					<div id="a188dd98a2a708b7db970fce598c97e1" class="wb_element wb_text_element" data-plugin="TextArea">
-						<p class="wb-stl-normal" style="text-align: center;"><strong>Phone:</strong><br>+359878171161</p>
-						<p class="wb-stl-normal" style="text-align: center;"><strong>Email:</strong><br><a href="mailto:info@example.com">info@example.com</a></p>
-					</div>
-					
-					<!-- Contact Form Section -->
-					<div class="contact-form-container">
-						<h2 style="text-align: center; margin-bottom: 30px;">Send us a message</h2>
-						<form id="contact-form">
-							<div class="form-group">
-								<label for="name">Name *</label>
-								<input type="text" id="name" name="name" required>
-							</div>
-							<div class="form-group">
-								<label for="email">Email *</label>
-								<input type="email" id="email" name="email" required>
-							</div>
-							<div class="form-group">
-								<label for="message">Message *</label>
-								<textarea id="message" name="message" required></textarea>
-							</div>
-							<div style="text-align: center;">
-								<button type="submit" class="submit-btn">Send Message</button>
-							</div>
-						</form>
-						<div id="form-response"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Footer -->
-	<div id="wb_footer_a188dd98b81a02d21e3ea7b0f8765787" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-		<div class="wb_content wb-layout-vertical">
-			<div id="a188dd98a2a74be7fa7a0c31eeec7580" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal">
-					<div id="a188dd98a2a74fece833f12a9a0bc30d" class="wb_element wb-prevent-layout-click" data-plugin="LinkExchangeBadge">
-						<div class="wb-stl-footer">Powered by <a href="https://site.pro/" target="_blank" title="Site.pro Website builder">Site.pro</a> | Dockerized Version</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script>
-// Contact form handler
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="gallery_gen/565150f9b0805928eb3c6f259e20650e_78x56_0x0_78x72_crop.png" alt="R.A.I.N. Icon">
+                <img src="gallery_gen/cd0df0cce139d68392d3b89ae1695123_492x150_fit.png" alt="R.A.I.N. Logo" style="height: 40px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contacts" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
+    <section class="hero-small">
+        <h1>Get In Touch</h1>
+        <p>We'd love to hear from you</p>
+    </section>
     
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3><i class="fas fa-map-pin" style="color: #3498db;"></i> Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <p class="label">Phone</p>
+                        <p>+359 878 171 161</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p class="label">Email</p>
+                        <p>info@rain-project.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <p class="label">Headquarters</p>
+                        <p>Sofia, Bulgaria</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p class="label">Business Hours</p>
+                        <p>Monday - Friday: 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3><i class="fas fa-paper-plane"></i> Send us a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" id="submitBtn">Send Message</button>
+                    <div id="formResponse"></div>
+                </form>
+            </div>
+        </div>
+    </div>
     
-    try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+    <footer class="footer">
+        <p>&copy; 2024 R.A.I.N. Project | Sustainable Energy for Tomorrow</p>
+    </footer>
+    
+    <script>
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formResponse = document.getElementById('formResponse');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    formResponse.innerHTML = '<div class="alert alert-success">✅ Thank you! We\'ll contact you soon.</div>';
+                    form.reset();
+                } else {
+                    formResponse.innerHTML = '<div class="alert alert-error">❌ Error sending message. Please try again.</div>';
+                }
+            } catch (error) {
+                formResponse.innerHTML = '<div class="alert alert-error">❌ Network error. Please check your connection.</div>';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                setTimeout(() => {
+                    formResponse.innerHTML = '';
+                }, 5000);
+            }
         });
-        
-        const result = await response.json();
-        const responseDiv = document.getElementById('form-response');
-        
-        if (result.success) {
-            responseDiv.className = 'success';
-            responseDiv.innerHTML = 'Thank you! We\'ll contact you soon.';
-            document.getElementById('contact-form').reset();
-        } else {
-            responseDiv.className = 'error';
-            responseDiv.innerHTML = 'Error sending message. Please try again.';
-        }
-    } catch (error) {
-        const responseDiv = document.getElementById('form-response');
-        responseDiv.className = 'error';
-        responseDiv.innerHTML = 'Network error. Please check your connection.';
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        
-        // Auto-hide message after 5 seconds
-        setTimeout(() => {
-            const responseDiv = document.getElementById('form-response');
-            responseDiv.className = '';
-            responseDiv.innerHTML = '';
-        }, 5000);
-    }
-});
-</script>
+    </script>
 </body>
 </html>

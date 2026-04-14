@@ -1,192 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript"></script>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>About - R.A.I.N. Project</title>
-	<base href="/" />
-	<link rel="canonical" href="/About/" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="About R.A.I.N. Project - Renewable energy solutions" />
-	<meta name="keywords" content="About, R.A.I.N., renewable energy" />
-	
-	<!-- CSS Files -->
-	<link href="css/common-bundle.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&amp;subset=cyrillic,cyrillic-ext,greek,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="css/a188dd98b81a01c224741d8158a4e426-bundle.css" rel="stylesheet" type="text/css" id="wb-page-stylesheet" />
-	
-	<script src="js/common-bundle.js" type="text/javascript"></script>
-	<script src="js/a188dd98b81a01c224741d8158a4e426-bundle.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.A.I.N. | About Us</title>
+    <base href="/" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a2e;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #3498db;
+        }
+        
+        .hero-small {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .hero-small h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .about-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1e3c72;
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+        
+        .water-info {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdef5 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.3rem;
+        }
+        
+        .team-card p {
+            color: #888;
+        }
+        
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-small h1 { font-size: 1.8rem; }
+            .container { padding: 2rem 1rem; }
+            .nav-container { flex-direction: column; }
+            .nav-links { gap: 1.5rem; }
+        }
+    </style>
 </head>
 
-<body class="site site-lang-en">
-<div id="wb_root" class="root wb-layout-vertical">
-	<div class="wb_sbg"></div>
-	
-	<!-- Header -->
-	<div id="wb_header_a188dd98b81a01c224741d8158a4e426" class="wb_element wb-sticky wb-layout-element" data-plugin="LayoutElement" data-h-align="center" data-v-align="top">
-		<div class="wb_content wb-layout-vertical">
-			<div id="a19d435fcfd7003770fd1b78d0846095" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal"></div>
-			</div>
-			<div id="a188dd98a2a73512bd09dd8ff1364d2d" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal">
-					<div id="a188dd98a2a736e01a07523e6d3bb5ed" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-horizontal">
-							<div id="a19d435f25e700c066961741329fcb77" class="wb_element wb_element_picture" data-plugin="Picture" title="">
-								<div class="wb_picture_wrap">
-									<div class="wb-picture-wrapper">
-										<img loading="lazy" alt="R.A.I.N. Icon" src="gallery_gen/565150f9b0805928eb3c6f259e20650e_78x56_0x0_78x72_crop.png">
-									</div>
-								</div>
-							</div>
-							<div id="a19d4360dd4c0064c0969805ad879bc2" class="wb_element wb_element_picture" data-plugin="Picture" title="">
-								<div class="wb_picture_wrap">
-									<div class="wb-picture-wrapper">
-										<img loading="lazy" alt="R.A.I.N. Logo" src="gallery_gen/cd0df0cce139d68392d3b89ae1695123_492x150_fit.png">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="a18b61c2b15b0018388b437dece967d2" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-vertical">
-							<div id="a19d43b78224002b944d6ed137ec8506" class="wb_element wb-menu wb-prevent-layout-click wb-menu-mobile" data-plugin="Menu">
-								<span class="btn btn-default btn-collapser">
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</span>
-								<ul class="hmenu" dir="ltr">
-									<li><a href="/">Home</a></li>
-									<li class="wb_this_page_menu_item active"><a href="/about">About</a></li>
-									<li><a href="/contacts">Contacts</a></li>
-								</ul>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Main Content -->
-	<div id="wb_main_a188dd98b81a01c224741d8158a4e426" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-		<div class="wb_content wb-layout-vertical">
-			<div id="a188dd98a2a73b04bafbdb9891dd0f4e" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal">
-					<div id="a188dd98a2a73c9fcf6c600a416a0c3e" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-vertical">
-							<div id="a188dd98a2a73dd32178fc3fafa76869" class="wb_element wb_text_element" data-plugin="TextArea">
-								<h1 class="wb-stl-heading1"><span style="color:rgba(255,255,255,1);">Renewable energy opportunities</span></h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="a19d44031164001139b4f038857d6d28" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal">
-					<div id="a188dd98a2a73f422bdc9eab0824fdd8" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-horizontal">
-							<div id="a188dd98a2a740b2099b19b5ba7812ce" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-								<div class="wb_content wb-layout-vertical">
-									<div id="a188dd98a2a741d2131d0b6ca78662c0" class="wb_element wb_text_element" data-plugin="TextArea">
-										<h2 class="wb-stl-heading2" style="text-align: center;">How it works</h2>
-									</div>
-									<div id="a188dd98a2a742f645ba8132fe185671" class="wb_element wb_text_element" data-plugin="TextArea">
-										<p class="wb-stl-normal"><strong>1.</strong> The pressure and moisture sensors detect whenever rain, hail or snow is falling. When detected, the opening shaft opens, collecting all the water.</p>
-										<p class="wb-stl-normal"><strong>2.</strong> The kinetic energy from the falling drops is being converted to electric and stored in a field of capacitors.</p>
-										<p class="wb-stl-normal"><strong>3.</strong> After a certain amount of water is collected, the container is tilted. This process opens the bottom shaft of the container and all the water is emptied.</p>
-										<p class="wb-stl-normal"><strong>4.</strong> The falling water spins a water wheel placed beneath the container. This way the kinetic energy of the water is used a second time and again being converted to electric.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="a188dd98a2a745692634361d1337a519" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-vertical">
-					<div id="a188dd98a2a746e5392c3ded95ed0c58" class="wb_element wb_text_element" data-plugin="TextArea">
-						<h2 class="wb-stl-heading2" style="text-align: center;">What happens to the water?</h2>
-					</div>
-					<div id="a19d43f026c300f918c95cafcda4d6be" class="wb_element wb_text_element" data-plugin="TextArea">
-						<p class="wb-stl-custom4" style="text-align: center;">After the container gets emptied, the water will be forwarded to water cleaning stations where it will be purified and bottled for future use</p>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Team section with hardcoded data from API -->
-			<div id="a19d47be102c0033fe0103d8aaaa4247" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-vertical">
-					<div id="a19d47be102900da806a4e1a55351f62" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<div class="wb_content wb-layout-vertical">
-							<div id="a19d47be2d27009de2f8e5b2aa8606e3" class="wb_element wb_text_element" data-plugin="TextArea">
-								<h1 class="wb-stl-custom5"><strong>About our team</strong></h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="a19d44de34e50015bdb7c37fde79c63f" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-vertical">
-					<div id="team-container" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-						<!-- Team members will be loaded here dynamically -->
-						<div class="wb_content wb-layout-horizontal" id="team-members-list">
-							<div style="text-align: center; padding: 20px;">Loading team information...</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Footer -->
-	<div id="wb_footer_a188dd98b81a01c224741d8158a4e426" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-		<div class="wb_content wb-layout-vertical">
-			<div id="a188dd98a2a74be7fa7a0c31eeec7580" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-				<div class="wb_content wb-layout-horizontal">
-					<div id="a188dd98a2a74fece833f12a9a0bc30d" class="wb_element wb-prevent-layout-click" data-plugin="LinkExchangeBadge">
-						<div class="wb-stl-footer">Powered by <a href="https://site.pro/" target="_blank" title="Site.pro Website builder">Site.pro</a> | Dockerized Version</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script>
-// Load team members from hardcoded API
-async function loadTeamMembers() {
-    try {
-        const response = await fetch('/api/team');
-        const team = await response.json();
-        
-        const container = document.getElementById('team-members-list');
-        if (team.length > 0) {
-            container.innerHTML = team.map(member => `
-                <div style="flex: 1; text-align: center; padding: 20px;">
-                    <div class="wb_element wb_text_element">
-                        <p class="wb-stl-custom6"><strong>${member.name}</strong></p>
-                        <p class="wb-stl-custom6">${member.role}</p>
-                    </div>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="gallery_gen/565150f9b0805928eb3c6f259e20650e_78x56_0x0_78x72_crop.png" alt="R.A.I.N. Icon">
+                <img src="gallery_gen/cd0df0cce139d68392d3b89ae1695123_492x150_fit.png" alt="R.A.I.N. Logo" style="height: 40px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/contacts">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="hero-small">
+        <h1>Renewable Energy Opportunities</h1>
+        <p>Understanding how R.A.I.N. works</p>
+    </section>
+    
+    <div class="container">
+        <div class="about-content">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Detection & Collection</h3>
+                    <p>Pressure and moisture sensors detect rain, hail, or snow. The opening shaft opens to collect all water.</p>
                 </div>
-            `).join('');
-        } else {
-            container.innerHTML = '<div style="text-align: center; padding: 20px;">Team information coming soon!</div>';
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Energy Conversion</h3>
+                    <p>Kinetic energy from falling drops converts to electricity and stores in capacitor fields.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Release Mechanism</h3>
+                    <p>When enough water is collected, the container tilts and opens the bottom shaft to empty.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Secondary Power</h3>
+                    <p>Falling water spins a water wheel, converting kinetic energy to electricity a second time.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="water-info">
+            <h2 style="color: #1e3c72; margin-bottom: 1rem;">💧 What happens to the water?</h2>
+            <p style="font-size: 1.1rem;">After the container gets emptied, the water is forwarded to water cleaning stations where it will be purified and bottled for future use.</p>
+        </div>
+        
+        <h2 class="section-title" style="margin-top: 2rem;">👥 About Our Team</h2>
+        <div id="team-container" class="team-grid">
+            <div style="text-align: center; grid-column: 1/-1;">Loading team members...</div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 R.A.I.N. Project | Sustainable Energy for Tomorrow</p>
+    </footer>
+    
+    <script>
+        async function loadTeam() {
+            try {
+                const response = await fetch('/api/team');
+                const team = await response.json();
+                const container = document.getElementById('team-container');
+                
+                if (team.length > 0) {
+                    container.innerHTML = team.map(member => `
+                        <div class="team-card">
+                            <div class="team-icon">👨‍💻</div>
+                            <h3>${member.name}</h3>
+                            <p>${member.role}</p>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading team:', error);
+            }
         }
-    } catch (error) {
-        console.error('Error loading team:', error);
-        document.getElementById('team-members-list').innerHTML = '<div style="text-align: center; padding: 20px;">Unable to load team information.</div>';
-    }
-}
-
-// Load team when page loads
-document.addEventListener('DOMContentLoaded', loadTeamMembers);
-</script>
+        
+        document.addEventListener('DOMContentLoaded', loadTeam);
+    </script>
 </body>
 </html>
